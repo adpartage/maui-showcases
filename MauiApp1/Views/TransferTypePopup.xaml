@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:MauiApp1.ViewModels"
+             xmlns:icons="clr-namespace:MauiApp1.Resources.Icons"
+             x:Class="MauiApp1.Views.TransferTypePopup"
+             VerticalOptions="End"
+             HorizontalOptions="Fill"
+             Color="#00000000">
+    <Border StrokeShape="RoundRectangle 20,20,0,0" StrokeThickness="0"
+            HorizontalOptions="Fill"
+            Padding="20,0,20,0"
+            Margin="0,0,0,20"
+            HeightRequest="150"
+            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}">
+        <VerticalStackLayout>
+
+            <Button ContentLayout="Left,10"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Scan to Pay"
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{x:Static vm:TransferType.ScanToPay}">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="Material" Glyph="{x:Static icons:MaterialIcons.QrCodeScanner}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button ContentLayout="Left,10"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Show QR Code to receive"
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{x:Static vm:TransferType.ShowQrCode}">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="Material" Glyph="{x:Static icons:MaterialIcons.QrCode2}"/>
+                </Button.ImageSource>
+            </Button>
+
+            <Button ContentLayout="Left,10"
+                        HorizontalOptions="StartAndExpand"
+                        Text="Make quick tranfer"
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{x:Static vm:TransferType.QuickTransfer}">
+                <Button.ImageSource>
+                    <FontImageSource FontFamily="Material" Glyph="{x:Static icons:MaterialIcons.MonetizationOn}"/>
+                </Button.ImageSource>
+            </Button>
+
+        </VerticalStackLayout>
+    </Border>
+</toolkit:Popup>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.Views.AlertPopup"
+             HorizontalOptions="Center"
+             Color="#00000000">
+    <Border StrokeShape="RoundRectangle 20" StrokeThickness="0"
+            HorizontalOptions="CenterAndExpand"
+            VerticalOptions="Start"
+            Padding="20"
+            HeightRequest="80"
+            BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}">
+        <Label 
+            Text="{Binding Message}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource PrimaryDarkText}}"/>
+    </Border>
+</toolkit:Popup>
